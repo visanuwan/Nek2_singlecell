@@ -1,6 +1,5 @@
 library(Seurat)
 library(SeuratDisk)
-library(SeuratData)
 library(MAST)
 library(dplyr)
 library(ggplot2)
@@ -9,23 +8,23 @@ library(ggplot2)
 ###### Load and QC data
 #################################################
 
-import_h5 <- Read10X_h5(filename = "data/wt_normal/filtered_feature_bc_matrix.h5")
-wt_normal <- CreateSeuratObject(counts = import_h5, project = "wt_normal", min.features = 200)
+expression_matrix <- ReadMtx(cells = "WT_barcodes.tsv.gz", features = "WT_features.tsv.gz", mtx = "WT_matrix.mtx.gz")
+wt_normal <- CreateSeuratObject(counts = expression_matrix, project = "wt_normal", min.features = 200)
 wt_normal[["percent.mt"]] <- PercentageFeatureSet(wt_normal, pattern = "^mt-")
 wt_normal <- subset(wt_normal, subset = nFeature_RNA > 200 & nFeature_RNA < 7000 & nCount_RNA < 70000 & percent.mt < 10)
 
-import_h5 <- Read10X_h5(filename = "data/wt_5T/filtered_feature_bc_matrix.h5")
-wt_5T <- CreateSeuratObject(counts = import_h5, project = "wt_5T", min.features = 200)
+expression_matrix <- ReadMtx(cells = "WT_5T_barcodes.tsv.gz", features = "WT_5T_features.tsv.gz", mtx = "WT_5T_matrix.mtx.gz")
+wt_5T <- CreateSeuratObject(counts = expression_matrix, project = "wt_5T", min.features = 200)
 wt_5T[["percent.mt"]] <- PercentageFeatureSet(wt_5T, pattern = "^mt-")
 wt_5T <- subset(wt_5T, subset = nFeature_RNA > 200 & nFeature_RNA < 7000 & nCount_RNA < 70000 & percent.mt < 10)
 
-import_h5 <- Read10X_h5(filename = "data/ko_normal/filtered_feature_bc_matrix.h5")
-ko_normal <- CreateSeuratObject(counts = import_h5, project = "ko_normal", min.features = 200)
+expression_matrix <- ReadMtx(cells = "KO_barcodes.tsv.gz", features = "KO_features.tsv.gz", mtx = "KO_matrix.mtx.gz")
+ko_normal <- CreateSeuratObject(counts = expression_matrix, project = "ko_normal", min.features = 200)
 ko_normal[["percent.mt"]] <- PercentageFeatureSet(ko_normal, pattern = "^mt-")
 ko_normal <- subset(ko_normal, subset = nFeature_RNA > 200 & nFeature_RNA < 7000 & nCount_RNA < 70000 & percent.mt < 10)
 
-import_h5 <- Read10X_h5(filename = "data/ko_5T/filtered_feature_bc_matrix.h5")
-ko_5T <- CreateSeuratObject(counts = import_h5, project = "ko_5T", min.features = 200)
+expression_matrix <- ReadMtx(cells = "KO_5T_barcodes.tsv.gz", features = "KO_5T_features.tsv.gz", mtx = "KO_5T_matrix.mtx.gz")
+ko_5T <- CreateSeuratObject(counts = expression_matrix, project = "ko_5T", min.features = 200)
 ko_5T[["percent.mt"]] <- PercentageFeatureSet(ko_5T, pattern = "^mt-")
 ko_5T <- subset(ko_5T, subset = nFeature_RNA > 200 & nFeature_RNA < 7000 & nCount_RNA < 70000 & percent.mt < 10)
 
