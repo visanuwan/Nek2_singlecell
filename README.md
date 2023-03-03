@@ -1,5 +1,5 @@
 # Nek2 singel cell analysis
-This repository contains the single cell analysis script for the paper __High NEK2 expression in myeloid progenitors suppresses T-cell immunity in multiple myeloma__. [![DOI](https://zenodo.org/badge/608266549.svg)](https://zenodo.org/badge/latestdoi/608266549)
+This repository contains the single cell analysis script for the paper __High NEK2 expression in myeloid progenitors suppresses T-cell immunity in multiple myeloma__. [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7697398.svg)](https://doi.org/10.5281/zenodo.7697398)
 
 ## Related Packages
 * [Seurat](https://github.com/satijalab/seurat): an R toolkit for single cell genomics, developed and maintained by the Satija Lab at NYGC.
