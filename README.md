@@ -1,4 +1,4 @@
-# Nek2 singel cell analysis
+# Nek2 single cell analysis
 This repository contains the single cell analysis script for the paper __High NEK2 expression in myeloid progenitors suppresses T-cell immunity in multiple myeloma__. [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7697398.svg)](https://doi.org/10.5281/zenodo.7697398)
 
 ## Related Packages
